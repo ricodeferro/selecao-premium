@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção Premium | Melhores Ofertas</title>
+    
+    <link rel="icon" type="image/png" href="https://i.ibb.co/LzNf9PZ5/favicon.png">
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
+        
+        /* HEADER */
+        header { 
+            background: #2c3e50; 
+            color: white; 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+            border-bottom: 5px solid #d4af37; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+
+        header h1 { margin: 10px 0 5px 0; letter-spacing: 1px; font-size: 2rem; }
+        header p { margin: 0; font-size: 1rem; opacity: 0.9; }
+
+        /* GRID E PRODUTOS */
+        .container { max-width: 1100px; margin: auto; padding: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-bottom: 4rem; }
+        
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; border: 1px solid #eee; }
+        .img-zoom-container { position: relative; width: 100%; height: 300px; overflow: hidden; background: #fff; cursor: zoom-in; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #eee; }
+        .img-zoom-container img { max-width: 80%; max-height: 80%; object-fit: contain; }
+        .img-zoom-lens { position: absolute; border: 2px solid #d4d4d4; border-radius: 50%; width: 140px; height: 140px; box-shadow: 0 0 10px rgba(0,0,0,0.2); pointer-events: none; display: none; background-repeat: no-repeat; z-index: 10; }
+
+        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .badge-row { display: flex; gap: 5px; margin-bottom: 10px; flex-wrap: wrap; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+        .badge-sold { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .badge-hot { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        
+        .card-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem; color: #2c3e50; min-height: 2.4em; }
+        .rating { color: #f39c12; font-size: 0.85rem; margin-bottom: 12px; font-weight: bold; }
+        
+        .expert-tip { background: #eef9f1; border: 1px dashed #27ae60; padding: 10px; border-radius: 8px; font-size: 0.85rem; color: #1e7e46; margin-bottom: 15px; }
+        .expert-tip::before { content: '💡 Por que recomendamos:'; font-weight: bold; display: block; margin-bottom: 2px; }
+
+        .btn { display: block; text-align: center; background: #27ae60; color: white; text-decoration: none; padding: 1rem; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 0 #1e7e46; position: relative; }
+        .btn:hover { background: #219150; transform: translateY(2px); box-shadow: 0 2px 0 #1e7e46; }
+
+        /* FAQ */
+        .faq-section { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        .faq-section h2 { text-align: center; color: #2c3e50; margin-bottom: 1.5rem; }
+        .faq-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .faq-question { width: 100%; text-align: left; background: none; border: none; font-size: 1.05rem; font-weight: bold; color: #2c3e50; cursor: pointer; display: flex; justify-content: space-between; align-items: center; outline: none; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #666; font-size: 0.95rem; }
+        .faq-answer p { padding: 10px 0; margin: 0; line-height: 1.5; }
+
+        /* SEÇÃO FEEDBACK */
+        .feedback-section { text-align: center; background: #2c3e50; color: white; padding: 2.5rem; border-radius: 15px; margin-top: 2rem; }
+        .feedback-section h3 { margin-top: 0; font-size: 1.3rem; }
+        .feedback-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .feedback-btn { background: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; color: #2c3e50; display: flex; align-items: center; gap: 8px; }
+        .feedback-btn:hover { background: #d4af37; color: white; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 3rem; font-size: 0.85rem; color: #888; background: #fff; margin-top: 4rem; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Seleção Premium</h1>
+    <p>Curadoria de ofertas testadas e aprovadas</p>
+</header>
+
+<div class="container">
+    <div class="grid">
+        <div class="card">
+            <div class="img-zoom-container">
+                <img src="https://m.media-amazon.com/images/I/51CgYi8bZkL._AC_SX425_.jpg" alt="Marca Texto">
+                <div class="img-zoom-lens"></div>
+            </div>
+            <div class="card-content">
+                <div class="badge-row">
+                    <span class="badge badge-sold">🔥 +20 mil compras/mês</span>
+                    <span class="badge badge-hot">Nº 1 MAIS VENDIDO</span>
+                </div>
+                <div class="card-title">Marca Texto Grifpen Estojo 6 Unidades - Faber-Castell</div>
+                <div class="rating">⭐ 4.9 (30.798+ avaliações)</div>
+                <div class="expert-tip">A tinta não atravessa folhas finas, ideal para livros.</div>
+                <a href="https://amzn.to/3My32wH" target="_blank" class="btn">VERIFICAR PREÇO ATUAL</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-zoom-container">
+                <img src="https://m.media-amazon.com/images/I/81tzLe1SbaL._AC_SX425_.jpg" alt="Smart TV">
+                <div class="img-zoom-lens"></div>
+            </div>
+            <div class="card-content">
+                <div class="badge-row">
+                    <span class="badge badge-hot">MODELO 2025</span>
+                    <span class="badge badge-sold">Estoque Limitado</span>
+                </div>
+                <div class="card-title">Hisense Smart TV FHD 43" 43A4NV com HDR10 e Alexa</div>
+                <div class="rating">⭐ 4.6 (78 avaliações)</div>
+                <div class="expert-tip">Melhor custo-benefício atual para telas de 43 polegadas.</div>
+                <a href="https://amzn.to/4koCISp" target="_blank" class="btn">APROVEITAR OFERTA</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="faq-section">
+        <h2>❓ Dúvidas Frequentes</h2>
+        
+        <div class="faq-item">
+            <button class="faq-question">Os links são seguros? <span>+</span></button>
+            <div class="faq-answer">
+                <p>Sim! Ao clicar, você é redirecionado diretamente para o site oficial da <strong>Amazon Brasil</strong>. Todo o processo de pagamento e entrega é feito por eles, garantindo sua total segurança.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Vou pagar mais caro clicando aqui? <span>+</span></button>
+            <div class="faq-answer">
+                <p>De forma alguma. O preço é exatamente o mesmo que você encontraria pesquisando diretamente na loja. A única diferença é que a loja nos paga uma pequena comissão por indicar produtos de qualidade.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Como vocês escolhem os produtos? <span>+</span></button>
+            <div class="faq-answer">
+                <p>Nossa equipe analisa o histórico de preços, o volume de vendas e, principalmente, as avaliações reais de quem já comprou. Só postamos o que realmente vale a pena.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Tive um problema com a entrega, e agora? <span>+</span></button>
+            <div class="faq-answer">
+                <p>Como somos apenas curadores de ofertas, todo o suporte de pós-venda, trocas ou devoluções deve ser tratado diretamente com a Central de Atendimento da Amazon através do seu painel de pedidos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback-section">
+        <h3>Sua experiência está sendo útil?</h3>
+        <p>Conte para nós o que achou da seleção de hoje:</p>
+        <div class="feedback-buttons">
+            <button class="feedback-btn" onclick="alert('Obrigado pelo seu feedback positivo!')">👍 Adorei as ofertas</button>
+            <button class="feedback-btn" onclick="alert('Obrigado! Vamos trabalhar para melhorar os produtos.')">🤔 Pode melhorar</button>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Seleção Premium. Todos os direitos reservados.</p>
+    <p>Como associado da Amazon, recebemos por compras qualificadas.</p>
+</footer>
+
+<script>
+    // Lógica da Lupa
+    document.querySelectorAll('.img-zoom-container').forEach(container => {
+        const img = container.querySelector('img');
+        const lens = container.querySelector('.img-zoom-lens');
+        container.addEventListener('mousemove', (e) => {
+            lens.style.display = 'block';
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const zoom = 2.5;
+            lens.style.backgroundImage = `url('${img.src}')`;
+            lens.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+            lens.style.backgroundPosition = "-" + (x * zoom - lens.offsetWidth / 2) + "px -" + (y * zoom - lens.offsetHeight / 2) + "px";
+            lens.style.left = (x - lens.offsetWidth / 2) + "px";
+            lens.style.top = (y - lens.offsetHeight / 2) + "px";
+        });
+        container.addEventListener('mouseleave', () => lens.style.display = 'none');
+    });
+
+    // Lógica do FAQ
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+            const isOpen = answer.style.maxHeight !== '0px' && answer.style.maxHeight !== '';
+            document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = '0px');
+            if (!isOpen) answer.style.maxHeight = answer.scrollHeight + "px";
+        });
+    });
+</script>
+
+</body>
+</html>
